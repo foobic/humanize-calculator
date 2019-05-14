@@ -38,11 +38,14 @@ def convert_num_to_word(num):
 
 
 def string_contains_error(splited_string):
-    if splited_string[0] in operations or splited_string[len(
-            splited_string) - 1] in operations:
+    max_num = max(numerals["powers"].keys())
+    if splited_string[0] in operations or \
+            splited_string[len(splited_string) - 1] in operations:
         return True
     for i in splited_string:
-        if not i.isdigit() and i not in operations.keys():
+        print()
+        if (not i.isdigit() and i not in operations.keys()) or \
+                (i.isdigit() and int(i) > max_num * 10):
             return True
     return False
 
