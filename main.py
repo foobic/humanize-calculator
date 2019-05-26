@@ -43,7 +43,6 @@ def string_contains_error(splited_string):
             splited_string[len(splited_string) - 1] in operations:
         return True
     for i in splited_string:
-        print()
         if (not i.isdigit() and i not in operations.keys()) or \
                 (i.isdigit() and int(i) > max_num * 10):
             return True
